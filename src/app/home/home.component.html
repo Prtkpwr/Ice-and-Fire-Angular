@@ -1,0 +1,92 @@
+
+<section class="top-section-area section-gap">
+  <div class="container-fluid">
+      <div class="row justify-content-center align-items-center d-flex">
+          <div class="col-lg-8">
+              <div id="imaginary_container"> 
+                  <div class="input-group stylish-input-group">
+                      <input type="text" class="form-control"  placeholder="Search.." [(ngModel)]="filter" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search..'" required="">
+                      <span class="input-group-addon">
+                          <button type="submit">
+                              <span class="lnr lnr-magnifier"></span>
+                          </button>  
+                      </span>
+                  </div>
+              </div> 
+              <br/>
+              <div class="justify-content-center align-items-center d-flex">
+
+                  <a class="genric-btn default-border circle" (click)="sort('name')">Sort By : Name
+                    <span *ngIf="key =='name'"></span>
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>  
+</section>
+<br/>
+<div class="container-fluid" style="text-align:center">
+  <div class="row" style="text-align:center">
+    <div class="col-md-12" style="font-size:22px">Game of Thrones </div>
+    <br><br>
+  </div>
+  <div class="row" style="text-align:center">
+    <div *ngFor="let everything of all | orderBy: key : reverse | filter:filter">
+
+      <div *ngIf="everything.gender" class="col-xs-11 col-lg-6 text-center">
+  
+        <div class="panel panel-default box">
+          <div class="panel-heading">Name : {{everything.name || "not available"  }}</div>
+          <div class="panel-body">
+           
+          </div>
+          <div class="panel-footer">Gender :  {{everything.gender}}<br/> Alias :  {{everything.aliases[0]}}
+          <br/><br/><a [routerLink]="['/character',everything.url.split('/').pop()]" class="genric-btn success">Read</a>
+          
+          </div>
+          
+        </div>
+  
+        <br/>
+      </div>
+  
+      <div *ngIf="everything.isbn" class="col-xs-11 col-lg-6 text-center">
+  
+          <div class="panel panel-default box1">
+            <div class="panel-heading">Name : {{everything.name || "not available"  }}</div>
+            <div class="panel-body">
+             
+            </div>
+            <div class="panel-footer">ISBN :  {{everything.isbn}}<br/> Pages :  {{everything.numberOfPages}}
+            <br/><br/><a [routerLink]="['/books',everything.url.split('/').pop()]" class="genric-btn primary">Read</a>
+            
+            </div>
+            
+          </div>
+    
+          <br/>
+        </div>
+  
+        <div *ngIf="everything.region" class="col-xs-11 col-lg-6 text-center">
+  
+            <div class="panel panel-default box2">
+              <div class="panel-heading">Name : {{everything.name || "not available"  }}</div>
+              <div class="panel-body">
+               
+              </div>
+              <div class="panel-footer">Region :  {{everything.region}}<br/> Seats :  {{everything.seats[0]}}
+              <br/><br/><a  [routerLink]="['/books',everything.url.split('/').pop()]" class="genric-btn info">Read</a>
+              
+              </div>
+              
+            </div>
+      
+            <br/>
+          </div>
+          
+    </div>
+
+  </div>
+
+
+</div>
