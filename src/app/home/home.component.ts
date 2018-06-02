@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GotService } from '../got.service';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/add/operator/mergeMap';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
