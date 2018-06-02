@@ -8,9 +8,10 @@ import { HttpErrorResponse } from "@angular/common/http";
 @Injectable()
 export class GotService {
 
-  private charUrl = 'https://www.anapioficeandfire.com/api/characters';
-  private bookUrl = 'https://www.anapioficeandfire.com/api/books';
-  private houseUrl = 'https://www.anapioficeandfire.com/api/houses';
+  private Url = 'https://www.anapioficeandfire.com/api/'
+  private charUrl = 'https://www.anapioficeandfire.com/api/characters/';
+  private bookUrl = 'https://www.anapioficeandfire.com/api/books/';
+  private houseUrl = 'https://www.anapioficeandfire.com/api/houses/';
 
   constructor(private _http: HttpClient) {
 
@@ -35,5 +36,9 @@ export class GotService {
     let myResponse = this._http.get(this.houseUrl)
     return myResponse;
   }
+  singleView(_url):any{
+		let myResponse = this._http.get(this.Url +_url)
+		return myResponse;
+	}
 
 }

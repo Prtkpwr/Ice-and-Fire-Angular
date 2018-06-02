@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
   books: any = [];
   houses: any = [];
 
+  p: number = 1;
+
   // for sorting
   key: string = 'name'; //set default
   reverse: boolean = false;

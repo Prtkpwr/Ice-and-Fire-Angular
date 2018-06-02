@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import { Ng2SearchPipeModule } from 'ng2-search-filter'; //importing the module
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { AppComponent } from './app.component';
@@ -15,12 +16,14 @@ import {RouterModule,Routes} from '@angular/router'
 import { HttpClientModule } from "@angular/common/http";
 
 import {GotService} from './got.service';
+import { SingleViewComponent } from './single-view/single-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SingleViewComponent
   ],
   imports: [
     BrowserModule,
@@ -29,11 +32,12 @@ import {GotService} from './got.service';
     BrowserAnimationsModule,
     Ng2OrderModule,
     Ng2SearchPipeModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       {path:'home',component:HomeComponent},
       {path:'',redirectTo:'home',pathMatch:'full'},
       // {path:'create',component:PostBlogComponent},
-      // {path:'edit/:blogId',component:BlogEditComponent},
+      {path:'singleView/:id',component:SingleViewComponent},
       // {path:'**',component:NotFoundComponent}
       
 
