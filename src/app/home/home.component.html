@@ -96,57 +96,58 @@
 
 <div class="container">
 
-    <!-- Page Heading -->
-    <h1 class="my-4 text-center">Game of Thrones 
-    </h1>
-    <div class="text-center">
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
-    </div>
-    <br/>
+  <!-- Page Heading -->
+  <h1 class="my-4 text-center">Game of Thrones
+  </h1>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  <br/>
 
-    <div class="row">
-      <div *ngFor="let everything of all | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 8, currentPage: p }" class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
-        <div *ngIf="everything.gender" class="card h-100">
-          <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
-          <div class="text-center card-header">
-              <h4>{{everything.name ||"A Secret Character"}}</h4>
-          </div>
-          <div class="card-body">
-            
-            <p class="card-text">Gender : {{everything.gender}}
-                <br/> Alias : {{everything.aliases[0]}}</p>
-              </div>
-              <div class="text-center card-footer">
-                  <a href="javascript():void" [routerLink]="['/singleView',everything.url.split('api/').pop()]" class="btn btn-outline-primary">Find Out More!</a>
-                </div>
+  <div class="row">
+    <div *ngFor="let everything of all | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 8, currentPage: p }"
+      class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+      <div *ngIf="everything.gender" class="card h-100">
+        <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
+        <div class="text-center card-header">
+          <h4>{{everything.name ||"A Secret Character"}}</h4>
         </div>
-        <div *ngIf="everything.isbn" class="card h-100">
-            <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
-            <div class="text-center card-header">
-                <h4>{{everything.name ||"Unnamed"}}</h4>
-            </div>
-            <div class="card-body">
-              <p class="card-text">ISBN : {{everything.isbn}}</p>
-            </div>
-                <div class="text-center card-footer">
-                    <a href="javascript():void" [routerLink]="['/singleView',everything.url.split('api/').pop()]"  class="btn btn-outline-secondary">Find Out More!</a>
-                  </div>
-          </div>
-          <div *ngIf="everything.region" class="card h-100">
-              <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
-              <div class="text-center card-header">
-                  <h4>{{everything.name ||"Unnamed"}}</h4>
-              </div>
-              <div class="card-body">
-                <p class="card-text">Region : {{everything.region}}
-                    <br/> Seats : {{everything.seats[0]}}</p>
-                  </div>
-                  <div class="text-center card-footer">
-                      <a href="javascript():void" [routerLink]="['/singleView',everything.url.split('api/').pop()]"  class="btn btn-outline-dark">Find Out More!</a>
-                    </div>
-            </div>
+        <div class="card-body">
+
+          <p class="card-text">Gender : {{everything.gender}}
+            <br/> Alias : {{everything.aliases[0]}}</p>
+        </div>
+        <div class="text-center card-footer">
+          <a href="javascript():void" [routerLink]="['/singleView',everything.url.split('api/').pop()]" class="btn btn-outline-primary">Find Out More!</a>
+        </div>
+      </div>
+      <div *ngIf="everything.isbn" class="card h-100">
+        <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
+        <div class="text-center card-header">
+          <h4>{{everything.name ||"Unnamed"}}</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">ISBN : {{everything.isbn}}</p>
+        </div>
+        <div class="text-center card-footer">
+          <a href="javascript():void" [routerLink]="['/singleView',everything.url.split('api/').pop()]" class="btn btn-outline-secondary">Find Out More!</a>
+        </div>
+      </div>
+      <div *ngIf="everything.region" class="card h-100">
+        <!-- <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a> -->
+        <div class="text-center card-header">
+          <h4>{{everything.name ||"Unnamed"}}</h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Region : {{everything.region}}
+            <br/> Seats : {{everything.seats[0]}}</p>
+        </div>
+        <div class="text-center card-footer">
+          <a href="javascript():void" [routerLink]="['/singleView',everything.url.split('api/').pop()]" class="btn btn-outline-dark">Find Out More!</a>
+        </div>
       </div>
     </div>
-    <!-- /.row -->
-
   </div>
+  <!-- /.row -->
+
+</div>

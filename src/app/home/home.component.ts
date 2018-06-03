@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
     this.key = key;
     this.reverse = !this.reverse;
   }
-  
+
   constructor(private gotService: GotService, private _route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
- // used mergeMAp for doing async operation
+    // used mergeMAp for doing async operation
     this.gotService.getChar()
       .mergeMap(
         data => {
@@ -57,8 +57,7 @@ export class HomeComponent implements OnInit {
         error => {
           console.log("some error occured");
           console.log(error.errorMessage)
-        }
-      );
+        });
   }
 
 }

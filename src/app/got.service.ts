@@ -16,7 +16,7 @@ export class GotService {
   constructor(private _http: HttpClient) {
 
     console.log("GotService is called")
-   }
+  }
 
   private handleError(err: HttpErrorResponse) {
     console.log("Handle error Http calls")
@@ -36,9 +36,9 @@ export class GotService {
     let myResponse = this._http.get(this.houseUrl)
     return myResponse;
   }
-  singleView(_url):any{
-		let myResponse = this._http.get(this.Url +_url)
-		return myResponse;
-	}
+  singleView(_url): any {
+    let myResponse = this._http.get(this.Url + _url)
+    return myResponse;
+  }
 
 }
