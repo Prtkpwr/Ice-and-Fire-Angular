@@ -1,11 +1,11 @@
 <br/>
 <br/>
 <br/>
-<div *ngIf="data.gender" class="col-xs-12 text-center">
+<div *ngIf="data.gender" class="col-xs-11 text-center">
   <div style="color: dimgrey;">
-    <h2>
+    <h4  style="margin: 10px 5px;">
       {{ data.name || "A Secret Character" }}
-    </h2>
+    </h4>
     <hr>
     <h4 *ngFor="let alias of data.aliases">Known as : "{{ alias || "Data Unavailable" }}"</h4>
     <h4>Gender : {{ data.gender || "Data Unavailable" }}</h4>
@@ -37,9 +37,9 @@
     <h4>Appeared in : "{{ data.seasons || "Data Unavailable" }}"</h4>
   </div>
 </div>
-<div *ngIf="data.region" class="col-xs-12 text-center">
+<div *ngIf="data.region" class="col-xs-11 text-center">
   <div style="color: dimgrey;">
-    <h4 style="margin: 10px 5px;" ng-if='data.name != ""'>
+    <h4 style="margin: 10px 5px;">
       <b> {{ data.name }} </b>
       <hr>
     </h4>
@@ -68,7 +68,7 @@
     <p>Coat Of Arms : "{{ data.coatOfArms || "Data Unavailable" }}"</p>
   </div>
 </div>
-<div *ngIf="data.isbn" class="col-xs-12 text-center">
+<div *ngIf="data.isbn" class="col-xs-11 text-center">
   <div style="color: dimgrey;">
     <h4 style="margin: 10px 5px;" ng-if='data.name != ""'>
       <b> {{ data.name }} </b>
