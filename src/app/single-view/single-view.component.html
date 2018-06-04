@@ -1,90 +1,83 @@
 <br/>
 <br/>
 <br/>
-<br/>
-<div style="color: saddlebrown;">
-  <div class="text-center">
-    <div *ngIf="data.gender" class="col-xs-12 text-center">
-      <h2>
-        <span style="margin:0px 5px;">
-          <i class="fa fa-star"></i>
-        </span>
-        {{ data.name || "A Secret Character" }}
-        <span style="margin:0px 5px;">
-          <i class="fa fa-star"></i>
-        </span>
-      </h2>
-      <hr style=" border-top: 1px solid black; margin-top: 5px;">
-      <hr/>
-      <h4 *ngFor="let alias of data.aliases">Known as : "{{ alias || "Data Unavailable" }}"</h4>
-      <h4>Gender : {{ data.gender || "Data Unavailable" }}</h4>
-      <h4> Born : {{ data.born || "Data Unavailable" }}</h4>
-      <h4>Culture : {{ data.culture || "Data Unavailable" }}</h4>
-      <h4>
-        Father :
-        <h6>
-          <a target="_blank" [routerLink]="['/singleView',data.father.split('api/').pop()]" style="color: #81d0e7;">{{ data.father || "Data Unavailable" }}</a>
-        </h6>
-      </h4>
-      <h4>
-        Mother :
-        <h6>
-          <a target="_blank" [routerLink]="['/singleView',data.mother.split('api/').pop()]" style="color: #81d0e7;">{{ data.mother || "Data Unavailable" }}</a>
-        </h6>
-      </h4>
-      <h4>
-        Spouse :
-        <h6>
-          <a target="_blank" [routerLink]="['/singleView',data.spouse.split('api/').pop()]" style="color: #81d0e7;">{{ data.spouse || "Data Unavailable"}}</a>
-        </h6>
-      </h4>
-      <h4>Played by : "{{ data.playedBy[0] || "Data Unavailable"}}"</h4>
-      <h4>Title : "{{ data.titles[0] || "Data Unavailable"}}"</h4>
-      <h4>Appeared in : "{{ data.seasons || "Data Unavailable" }}"</h4>
-    </div>
-    <div *ngIf="data.region" class="col-xs-12 text-center">
-      <div style="color: dimgrey;">
-        <h4 style="margin: 10px 5px;" ng-if='data.name != ""'>
-          <b> {{ data.name }} </b>
-          <hr>
-        </h4>
-        <h4>Region : {{ data.region || "Data Unavailable" }}</h4>
-        <h4>Seats : {{ data.seats[0] || "Data Unavailable" }}</h4>
-        <h4>Titles : {{ data.titles || "Data Unavailable" }}</h4>
-        <h4>Founded : {{ data.founded || "Data Unavailable" }}</h4>
-        <h4> Words: {{ data.words || "Data Unavailable" }}</h4>
-        <h4>
-          Heir :
-        </h4>
-        <a target="_blank" [routerLink]="['/singleView',data.heir.split('api/').pop()]">{{ data.heir || "Data Unavailable" }}</a>
+<div *ngIf="data.gender" class="col-xs-12 text-center">
+  <div style="color: dimgrey;">
+    <h2>
+      {{ data.name || "A Secret Character" }}
+    </h2>
+    <hr>
+    <h4 *ngFor="let alias of data.aliases">Known as : "{{ alias || "Data Unavailable" }}"</h4>
+    <h4>Gender : {{ data.gender || "Data Unavailable" }}</h4>
+    <h4> Born : {{ data.born || "Data Unavailable" }}</h4>
+    <h4>Culture : {{ data.culture || "Data Unavailable" }}</h4>
+    <h4>
+      Father :
+    </h4>
+      <h6>
+        <a target="_blank" [routerLink]="['/singleView',data.father.split('api/').pop()]" style="color: #81d0e7;">{{ data.father || "Data Unavailable" }}</a>
+      </h6>
+    
+    <h4>
+      Mother :
+    </h4>
+      <h6>
+        <a target="_blank" [routerLink]="['/singleView',data.mother.split('api/').pop()]" style="color: #81d0e7;">{{ data.mother || "Data Unavailable" }}</a>
+      </h6>
+    
+    <h4>
+      Spouse :
+    </h4>
+      <h6>
+        <a target="_blank" [routerLink]="['/singleView',data.spouse.split('api/').pop()]" style="color: #81d0e7;">{{ data.spouse || "Data Unavailable"}}</a>
+      </h6>
+    
+    <h4>Played by : "{{ data.playedBy[0] || "Data Unavailable"}}"</h4>
+    <h4>Title : "{{ data.titles[0] || "Data Unavailable"}}"</h4>
+    <h4>Appeared in : "{{ data.seasons || "Data Unavailable" }}"</h4>
+  </div>
+</div>
+<div *ngIf="data.region" class="col-xs-12 text-center">
+  <div style="color: dimgrey;">
+    <h4 style="margin: 10px 5px;" ng-if='data.name != ""'>
+      <b> {{ data.name }} </b>
+      <hr>
+    </h4>
+    <h4>Region : {{ data.region || "Data Unavailable" }}</h4>
+    <h4>Seats : {{ data.seats[0] || "Data Unavailable" }}</h4>
+    <h4>Titles : {{ data.titles || "Data Unavailable" }}</h4>
+    <h4>Founded : {{ data.founded || "Data Unavailable" }}</h4>
+    <h4> Words: {{ data.words || "Data Unavailable" }}</h4>
+    <h4>
+      Heir :
+    </h4>
+    <a target="_blank" [routerLink]="['/singleView',data.heir.split('api/').pop()]">{{ data.heir || "Data Unavailable" }}</a>
 
-        <h4>
-          Current Lord :
-          <h6>
-            <a target="_blank" [routerLink]="['/singleView',data.currentLord.split('api/').pop()]">{{ data.currentLord || "Data Unavailable" }}</a>
-          </h6>
-        </h4>
-        <h4>
-          Overlord :
-          <h6>
-            <a target="_blank" [routerLink]="['/singleView',data.overlord.split('api/').pop()]">{{ data.overlord || "Data Unavailable" }}</a>
-          </h6>
-        </h4>
-        <p>Coat Of Arms : "{{ data.coatOfArms || "Data Unavailable" }}"</p>
-      </div>
-    </div>
-    <div *ngIf="data.isbn" class="col-xs-12 text-center">
-      <div style="color: dimgrey;">
-        <h4 style="margin: 10px 5px;" ng-if='data.name != ""'>
-          <b> {{ data.name }} </b>
-          <hr>
-        </h4>
-        <h4>Country : {{ data.country || "Data Unavailable" }}</h4>
-        <h4>ISBN : {{ data.isbn || "Data Unavailable" }}</h4>
-        <h4>Media Type : {{ data.mediaType || "Data Unavailable" }}</h4>
-        <h4>No. of Pages : {{ data.numberOfPages || "Data Unavailable" }}</h4>
-        <h4> Publisher: {{ data.publisher || "Data Unavailable" }}</h4>
-      </div>
-    </div>
+    <h4>
+      Current Lord :
+      <h6>
+        <a target="_blank" [routerLink]="['/singleView',data.currentLord.split('api/').pop()]">{{ data.currentLord || "Data Unavailable" }}</a>
+      </h6>
+    </h4>
+    <h4>
+      Overlord :
+      <h6>
+        <a target="_blank" [routerLink]="['/singleView',data.overlord.split('api/').pop()]">{{ data.overlord || "Data Unavailable" }}</a>
+      </h6>
+    </h4>
+    <p>Coat Of Arms : "{{ data.coatOfArms || "Data Unavailable" }}"</p>
+  </div>
+</div>
+<div *ngIf="data.isbn" class="col-xs-12 text-center">
+  <div style="color: dimgrey;">
+    <h4 style="margin: 10px 5px;" ng-if='data.name != ""'>
+      <b> {{ data.name }} </b>
+      <hr>
+    </h4>
+    <h4>Country : {{ data.country || "Data Unavailable" }}</h4>
+    <h4>ISBN : {{ data.isbn || "Data Unavailable" }}</h4>
+    <h4>Media Type : {{ data.mediaType || "Data Unavailable" }}</h4>
+    <h4>No. of Pages : {{ data.numberOfPages || "Data Unavailable" }}</h4>
+    <h4> Publisher: {{ data.publisher || "Data Unavailable" }}</h4>
   </div>
 </div>
